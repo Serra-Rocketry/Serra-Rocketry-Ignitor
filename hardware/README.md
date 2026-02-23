@@ -148,22 +148,22 @@ Conectada fisicamente ao ignitor do foguete.
 ## Galeria de Componentes
 
 ### Raspberry Pi Pico
-![Raspberry Pi Pico](./images/pipico.png)
+<img src="./images/pipico.png" width="220" alt="Raspberry Pi Pico"/>
 
 Microcontrolador dual-core ARM Cortex-M0+ (RP2040), 264KB SRAM, 2MB Flash.
 
 ### Módulo LoRa SX1268
-![Módulo LoRa SX1268](./images/lora.png)
+<img src="./images/lora.png" width="220" alt="Módulo LoRa SX1268"/>
 
 Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 
 ### Botão Liga/Desliga
-![Botão Liga/Desliga](./images/power-button.avif)
+<img src="./images/power-button.avif" width="220" alt="Botão Liga/Desliga"/>
 
 Botão de potência **12V 20A** para controle de energia das estações.
 
 ### Botão de Ignição
-![Botão de Ignição](./images/ignition-button.png)
+<img src="./images/ignition-button.png" width="220" alt="Botão de Ignição"/>
 
 Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado exclusivamente na Estação de Comando para iniciar a sequência de ignição.
 
