@@ -1,18 +1,50 @@
-# Serra-Rocketry-Ignitor
-This GitHub repository contains the source code, documentation, and 3D models for the Serra Rocketry Ignitor. Written in C++ for an Arduino microcontroller, the ignitor is a crucial component for launching high-powered rocket models. The repository includes a user manual and welcomes community contributions.
+# Serra Rocketry Ignitor
 
-## list of materials
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Versão](https://img.shields.io/badge/versão-1.0.0-blue)
 
-- esp
-- lora
+## 📋 Sobre
+Sistema de ignição remota para foguetes experimentais Serra Rocketry. Composto por duas estações independentes: **Estação de Comando** (operada remotamente) e **Estação de Ignição** (conectada ao ignitor do foguete). Comunicação via LoRa com redundâncias de segurança e feedback audiovisual em ambas as estações.
 
-## Safety measures
+## 🚀 Quick Start
+1. Clone o repositório
+2. Configure o hardware conforme esquemático
+3. Carregue o firmware
+4. Execute os testes
+
+## 📁 Estrutura do Projeto
+├── docs/           → Documentação detalhada
+├── firmware/       → Código do microcontrolador
+├── hardware/       → Esquemáticos e PCBs
+├── software/       → Interfaces e análises
+└── test/           → Testes e validação
+
+## 🔧 Componentes Principais
+- 2x Raspberry Pi Pico
+- 2x Módulos LoRa (915 MHz)
+- 6x LEDs (2 verdes, 2 amarelos, 2 vermelhos)
+- 2x Buzzers ativos
+- 2x Botões (comando: liga/desliga + ignição)
+- 2x Baterias (a definir)
+- Cases impressos em 3D
+
+## 📖 Documentação
+- [Guia de Instalação Detalhado](./docs/INSTALACAO.md)
+- [Esquemático e Montagem](./hardware/README.md)
+- [API e Protocolos](./docs/API.md)
+- [Troubleshooting](./docs/TROUBLESHOOTING.md)
+
 ## 🤝 Contribuindo
+Ver [Boas Práticas Serra Rocketry](https://github.com/Serra-Rocketry/best-practices)
 
-Este projeto segue as **Boas Práticas do Serra Rocketry**. Antes de contribuir:
+## 📊 Status do Projeto
+- [ ] Definição de arquitetura e componentes
+- [ ] Esquemáticos e pinagem
+- [ ] Firmware Estação de Comando
+- [ ] Firmware Estação de Ignição
+- [ ] Protocolo de comunicação LoRa
+- [ ] Cases 3D
+- [ ] Testes de campo
 
-1. 📖 Leia nosso [Guia de Boas Práticas](https://github.com/Serra-Rocketry/best-practices/blob/main/README.md)
-2. 🔄 Siga o fluxo: Fork → Branch → Pull Request
-3. 📝 Documente suas mudanças
-
-**Primeira vez contribuindo?** Não se preocupe! O guia explica tudo passo a passo.
+## ✨ Equipe
+Projeto desenvolvido pela equipe Serra Rocketry
