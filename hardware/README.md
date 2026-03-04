@@ -1,5 +1,9 @@
 # Hardware - Serra Rocketry Ignitor
 
+## Diagrama Esquemático
+
+![Esquemático da Estação de Comando](images/schematics/ESTAÇAO%20DE%20COMANDO_bb.png)
+
 ## Arquitetura do Sistema
 
 O sistema é composto por **duas estações independentes** que se comunicam via rádio LoRa:
