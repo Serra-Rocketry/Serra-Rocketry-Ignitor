@@ -1,9 +1,5 @@
 # Hardware - Serra Rocketry Ignitor
 
-## Diagrama Esquemático
-
-![Esquemático da Estação de Comando](images/schematics/ESTA%C3%87AO%20DE%20COMANDO_bb.png)
-
 ## Arquitetura do Sistema
 
 O sistema é composto por **duas estações independentes** que se comunicam via rádio LoRa:
@@ -74,9 +70,9 @@ Conectada fisicamente ao ignitor do foguete.
 | GP10 | LED Verde | Status: ligado |
 | GP11 | LED Amarelo | Status: conectado |
 | GP12 | LED Vermelho | Status: ignição iminente |
-| GP13 | Buzzer | Alerta sonoro |
+| GP19 | Buzzer | Alerta sonoro |
 | GP14 | Botão Power | Liga/desliga |
-| GP15 | Botão Ignição | Comando de ignição (segurar 5 s) |
+| GP18 | Botão Ignição | Comando de ignição (segurar 5 s) |
 
 ### Estação de Ignição
 | GPIO Pico | Conexão | Descrição |
@@ -89,9 +85,9 @@ Conectada fisicamente ao ignitor do foguete.
 | GP10 | LED Verde | Status: ligado |
 | GP11 | LED Amarelo | Status: conectado com comando |
 | GP12 | LED Vermelho | Status: ignição iminente |
-| GP13 | Buzzer | Contagem regressiva |
-| GP16 | Gate Ignitor | Comando MOSFET/Relé |
-| GP17 | Sensor Continuidade | Detecta circuito ignitor (opcional) |
+| GP19 | Buzzer | Contagem regressiva |
+| GP26 Gate Ignitor | Comando MOSFET/Relé |
+
 
 ## Sequência de Operação
 
@@ -152,12 +148,12 @@ Conectada fisicamente ao ignitor do foguete.
 ## Galeria de Componentes
 
 ### Raspberry Pi Pico
-<img src="./images/pipico.png" width="220" alt="Raspberry Pi Pico"/>
+<img src="./images/schematics/pipico.png" width="220" alt="Raspberry Pi Pico"/>
 
 Microcontrolador dual-core ARM Cortex-M0+ (RP2040), 264KB SRAM, 2MB Flash.
 
 ### Módulo LoRa SX1268
-<img src="./images/lora.png" width="220" alt="Módulo LoRa SX1268"/>
+<img src="./images/schematics/lora.png" width="220" alt="Módulo LoRa SX1268"/>
 
 Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 
@@ -167,16 +163,22 @@ Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 Botão de potência **12V 20A** para controle de energia das estações.
 
 ### Botão de Ignição
-<img src="./images/ignition-button.png" width="220" alt="Botão de Ignição"/>
+<img src="./images/schematics/ignition-button.png" width="220" alt="Botão de Ignição"/>
 
 Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado exclusivamente na Estação de Comando para iniciar a sequência de ignição.
 
+## Esquemáticos
+
+### Estação de comando
+
+<img src="./images/schematics/ESTAÇAO DE COMANDO_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
+
+### Estação de ignição
+
+<img src ="./images/schematics/ESTAÇAO DE IGNIÇÃO_bb.png""/>
+
 ## Arquivos de Fabricação
 
-- [Esquemático Estação de Comando (PNG)](./images/schematics/ESTA%C3%87AO%20DE%20COMANDO_bb.png)
-- [Esquemático Estação de Ignição (PNG)](./images/schematics/ESTA%C3%87%C3%83O%20DE%20IGNI%C3%87%C3%83O_bb.png)
-- Esquemático PDF - *A criar*
-- [PCB Gerbers](./gerbers/) - *A criar*
 - [Modelos 3D dos cases](./3d_models/) - *A criar*
 
 ## Notas Importantes
