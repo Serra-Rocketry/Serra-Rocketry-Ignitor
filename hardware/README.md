@@ -86,7 +86,7 @@ Conectada fisicamente ao ignitor do foguete.
 | GP11 | LED Amarelo | Status: conectado com comando |
 | GP12 | LED Vermelho | Status: ignição iminente |
 | GP19 | Buzzer | Contagem regressiva |
-| GP26 Gate Ignitor | Comando MOSFET/Relé |
+| GP26 | Gate Ignitor | Comando MOSFET/Relé |
 
 
 ## Sequência de Operação
@@ -148,12 +148,12 @@ Conectada fisicamente ao ignitor do foguete.
 ## Galeria de Componentes
 
 ### Raspberry Pi Pico
-<img src="./images/schematics/pipico.png" width="220" alt="Raspberry Pi Pico"/>
+<img src="./images/pipico.png" width="220" alt="Raspberry Pi Pico"/>
 
 Microcontrolador dual-core ARM Cortex-M0+ (RP2040), 264KB SRAM, 2MB Flash.
 
 ### Módulo LoRa SX1268
-<img src="./images/schematics/lora.png" width="220" alt="Módulo LoRa SX1268"/>
+<img src="./images/lora.png" width="220" alt="Módulo LoRa SX1268"/>
 
 Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 
@@ -163,7 +163,7 @@ Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 Botão de potência **12V 20A** para controle de energia das estações.
 
 ### Botão de Ignição
-<img src="./images/schematics/ignition-button.png" width="220" alt="Botão de Ignição"/>
+<img src="./images/ignition-button.png" width="220" alt="Botão de Ignição"/>
 
 Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado exclusivamente na Estação de Comando para iniciar a sequência de ignição.
 
@@ -171,11 +171,11 @@ Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado e
 
 ### Estação de comando
 
-<img src="./images/schematics/ESTAÇAO DE COMANDO_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
+<img src="./images/schematics/ESTA%C3%87AO%20DE%20COMANDO_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
 
 ### Estação de ignição
 
-<img src ="./images/schematics/ESTAÇAO DE IGNIÇÃO_bb.png""/>
+<img src="./images/schematics/ESTA%C3%87%C3%83O%20DE%20IGNI%C3%87%C3%83O_bb.png" width="320" alt="Esquemático fritzing, caixa de ignição"/>
 
 ## Arquivos de Fabricação
 
