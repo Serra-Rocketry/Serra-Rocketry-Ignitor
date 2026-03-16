@@ -163,6 +163,7 @@ Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 Botão de potência **12V 20A** para controle de energia das estações.
 
 ### Botão de Ignição
+
 <img src="./images/ignition-button.png" width="220" alt="Botão de Ignição"/>
 
 Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado exclusivamente na Estação de Comando para iniciar a sequência de ignição.
@@ -173,7 +174,7 @@ Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado e
 
 <img src="./images/schematics/ESTA%C3%87AO%20DE%20COMANDO_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
 
-### Estação de ignição
+### Estação de ignicão
 
 <img src="./images/schematics/ESTA%C3%87%C3%83O%20DE%20IGNI%C3%87%C3%83O_bb.png" width="320" alt="Esquemático fritzing, caixa de ignição"/>
 
