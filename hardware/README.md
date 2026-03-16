@@ -173,7 +173,9 @@ Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado e
 
 ## Arquivos de Fabricação
 
-- [Esquemático PDF](./schematic.pdf) - *A criar*
+- [Esquemático Estação de Comando (PNG)](./images/schematics/ESTA%C3%87AO%20DE%20COMANDO_bb.png)
+- [Esquemático Estação de Ignição (PNG)](./images/schematics/ESTA%C3%87%C3%83O%20DE%20IGNI%C3%87%C3%83O_bb.png)
+- Esquemático PDF - *A criar*
 - [PCB Gerbers](./gerbers/) - *A criar*
 - [Modelos 3D dos cases](./3d_models/) - *A criar*
 
