@@ -14,11 +14,12 @@ Operada remotamente pelo operador (distância segura do foguete).
 
 **Componentes:**
 - 1x Raspberry Pi Pico
-- 1x Módulo LoRa SX1268 433 MHz
+- 1x Módulo LoRa SX1278 433 MHz
 - 1x Botão liga/desliga
 - 1x Botão de ignição (ação mantida por 5 s)
-- 3x LEDs: verde (ligado), amarelo (conectado), vermelho (ignição iminente)
+- 2x LEDs: amarelo (conectado), vermelho (ignição iminente)
 - 1x Buzzer ativo
+- 1x Módulo TP4056 (com proteção) para recarregar a bateria
 - 1x Bateria (a definir capacidade)
 - Case impresso em 3D
 
@@ -33,10 +34,11 @@ Conectada fisicamente ao ignitor do foguete.
 
 **Componentes:**
 - 1x Raspberry Pi Pico
-- 1x Módulo LoRa SX1268 433 MHz
-- 3x LEDs: verde (ligado), amarelo (conectado), vermelho (ignição iminente)
+- 1x Módulo LoRa SX1278 433 MHz
+- 2x LEDs: amarelo (conectado), vermelho (ignição iminente)
 - 1x Buzzer ativo
-- 1x Relé ou MOSFET para acionamento do ignitor
+- 1x Relé para acionamento do ignitor
+- 1x Módulo TP4056 (com proteção) para recarregar a bateria
 - 1x Bateria (a definir capacidade)
 - Case impresso em 3D
 
@@ -45,17 +47,17 @@ Conectada fisicamente ao ignitor do foguete.
 | Componente | Quantidade | Referência | Especificação | Link |
 |------------|------------|------------|---------------|------|
 | Raspberry Pi Pico | 2 | MCU1, MCU2 | RP2040 | [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-pico/) |
-| Módulo LoRa SX1268 | 2 | LORA1, LORA2 | 433 MHz | [Hoperf](https://www.hoperf.com/) |
-| LED Verde 5mm | 2 | LED_G1, LED_G2 | 20 mA | - |
+| Módulo LoRa SX1278 | 2 | LORA1, LORA2 | 433 MHz | [Hoperf](https://www.hoperf.com/) |
 | LED Amarelo 5mm | 2 | LED_Y1, LED_Y2 | 20 mA | - |
 | LED Vermelho 5mm | 2 | LED_R1, LED_R2 | 20 mA | - |
 | Buzzer ativo 5V | 2 | BZ1, BZ2 | Piezo | - |
 | Botão Liga/Desliga | 2 | BTN_PWR1, BTN_PWR2 | 12V 20A | - |
 | Botão de Ignição | 1 | BTN_IGN | 22mm, 3-9V (5V), Momentary Reset, Vermelho | - |
 | MOSFET/Relé | 1 | Q1/K1 | Para ignitor (corrente a definir) | - |
-| Bateria | 2 | BAT1, BAT2 | A definir (LiPo/18650) | - |
-| Resistores 220Ω | 6 | R1-R6 | Para LEDs | - |
+| Bateria | 12 | BAT1, BAT2 | A definir (LiPo/18650) | - |
+| Resistores 220Ω | 4 | R1-R4 | Para LEDs | - |
 | Antena LoRa | 2 | ANT1, ANT2 | 433 MHz | - |
+| Módulo TP4056 | 2 | CHG1, CHG2 | Carregador Li-ion/LiPo 1 célula (4,2 V), entrada 5 V, corrente de carga ajustável (até 1 A), proteção recomendada (DW01A+8205A) | [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/TP4056.pdf) |
 
 ## Pinagem Raspberry Pi Pico
 
@@ -67,12 +69,12 @@ Conectada fisicamente ao ignitor do foguete.
 | GP2 | LoRa SPI SCK | SPI Clock |
 | GP3 | LoRa SPI TX | SPI MOSI |
 | GP4 | LoRa RESET | Reset |
-| GP10 | LED Verde | Status: ligado |
 | GP11 | LED Amarelo | Status: conectado |
 | GP12 | LED Vermelho | Status: ignição iminente |
+| GP13 | LED do botão | Status: ligado |
 | GP19 | Buzzer | Alerta sonoro |
 | GP14 | Botão Power | Liga/desliga |
-| GP18 | Botão Ignição | Comando de ignição (segurar 5 s) |
+| GP26 | Botão Ignição | Comando de ignição (segurar 5 s) |
 
 ### Estação de Ignição
 | GPIO Pico | Conexão | Descrição |
@@ -82,24 +84,23 @@ Conectada fisicamente ao ignitor do foguete.
 | GP2 | LoRa SPI SCK | SPI Clock |
 | GP3 | LoRa SPI TX | SPI MOSI |
 | GP4 | LoRa RESET | Reset |
-| GP10 | LED Verde | Status: ligado |
 | GP11 | LED Amarelo | Status: conectado com comando |
 | GP12 | LED Vermelho | Status: ignição iminente |
 | GP19 | Buzzer | Contagem regressiva |
-| GP26 | Gate Ignitor | Comando MOSFET/Relé |
+| GP26 | Gate Ignitor | Comando Relé |
 
 
 ## Sequência de Operação
 
 ### Estados dos LEDs
-| Estado | LED Verde | LED Amarelo | LED Vermelho |
-|--------|-----------|-------------|--------------|
-| Desligado | OFF | OFF | OFF |
-| Ligado (idle) | ON | OFF | OFF |
-| Conectado | ON | ON | OFF |
-| Ignição iminente | ON | ON | PISCA |
-| Ignição ativa | ON | ON | ON |
-| Erro | OFF | OFF | PISCA |
+| Estado | LED Amarelo | LED Vermelho |
+|--------|-------------|--------------|
+| Desligado | OFF | OFF |
+| Ligado (idle) | OFF | OFF |
+| Conectado | ON | OFF |
+| Ignição iminente | ON | PISCA |
+| Ignição ativa | ON | ON |
+| Erro | OFF | PISCA |
 
 ### Sequência de Ignição
 
@@ -144,6 +145,13 @@ Conectada fisicamente ao ignitor do foguete.
 - Operação normal (conectado): ~50 mA @ 3.3 V
 - Transmissão LoRa: ~120 mA (picos)
 - Autonomia estimada: 6-8 h com bateria 1000 mAh
+
+### Carregamento com TP4056
+
+- Cada estação usa um TP4056 dedicado (CHG1 e CHG2) para 2 células Li-ion/LiPo (3,7 V nominal).
+- Conexão típica: `IN+ / IN-` (5 V da porta USB), `BAT+ / BAT-` (bateria), `OUT+ / OUT-` (alimentação da carga) quando a placa tiver proteção integrada.
+- Corrente de carga recomendada para bateria de 1000 mAh: 0,5 A a 1,0 A (0,5C a 1C), respeitando especificação da bateria.
+- Preferir módulos com proteção (DW01A + 8205A) para reduzir risco de sobrecarga, descarga profunda e curto.
 
 ## Galeria de Componentes
 
