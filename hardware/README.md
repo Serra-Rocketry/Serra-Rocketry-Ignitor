@@ -180,11 +180,11 @@ Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado e
 
 ### Estação de comando
 
-<img src="./images/schematics/ESTA%C3%87AO%20DE%20COMANDO_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
+<img src="./images/schematics/estacao-comando_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
 
 ### Estação de ignicão
 
-<img src="./images/schematics/ESTA%C3%87%C3%83O%20DE%20IGNI%C3%87%C3%83O_bb.png" width="320" alt="Esquemático fritzing, caixa de ignição"/>
+<img src="./images/schematics/estacao-ignicao_bb.png" width="320" alt="Esquemático fritzing, caixa de ignição"/>
 
 ## Arquivos de Fabricação
 
