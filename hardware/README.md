@@ -5,7 +5,7 @@
 O sistema é composto por **duas estações independentes** que se comunicam via rádio LoRa:
 
 ### 1. Estação de Comando
-Operada remotamente pelo operador (distância segura do foguete).
+Operada remotamente pelo operador (distância segura do foguete)
 
 **Função:**
 - Iniciar sequência de ignição via botão dedicado
@@ -124,7 +124,7 @@ Conectada fisicamente ao ignitor do foguete.
 
 5. **Ao final dos 5 segundos:**
    - LED vermelho fica **sólido** em ambas estações
-   - Estação de Ignição aciona o ignitor (GPIO16 HIGH)
+   - Estação de Ignição aciona o ignitor (GP26 HIGH)
    - Buzzer emite tom longo de confirmação
 
 6. **Após ignição:**
@@ -148,12 +148,12 @@ Conectada fisicamente ao ignitor do foguete.
 ## Galeria de Componentes
 
 ### Raspberry Pi Pico
-<img src="./images/schematics/pipico.png" width="220" alt="Raspberry Pi Pico"/>
+<img src="./images/pipico.png" width="220" alt="Raspberry Pi Pico"/>
 
 Microcontrolador dual-core ARM Cortex-M0+ (RP2040), 264KB SRAM, 2MB Flash.
 
 ### Módulo LoRa SX1268
-<img src="./images/schematics/lora.png" width="220" alt="Módulo LoRa SX1268"/>
+<img src="./images/lora.png" width="220" alt="Módulo LoRa SX1268"/>
 
 Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 
@@ -163,7 +163,7 @@ Transceptor LoRa de longo alcance operando em **433 MHz**. Chip Semtech SX1268.
 Botão de potência **12V 20A** para controle de energia das estações.
 
 ### Botão de Ignição
-<img src="./images/schematics/ignition-button.png" width="220" alt="Botão de Ignição"/>
+<img src="./images/ignition-button.png" width="220" alt="Botão de Ignição"/>
 
 Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado exclusivamente na Estação de Comando para iniciar a sequência de ignição.
 
@@ -171,11 +171,11 @@ Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado e
 
 ### Estação de comando
 
-<img src="./images/schematics/ESTAÇAO DE COMANDO_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
+<img src="./images/schematics/estacao-comando_bb.png" width="320" alt="Esquemático fritzing, caixa de comando"/>
 
 ### Estação de ignição
 
-<img src ="./images/schematics/ESTAÇAO DE IGNIÇÃO_bb.png  
+<img src="./images/schematics/estacao-ignicao_bb.png" width="320" alt="Esquemático fritzing, caixa de ignição"/>
 
 ## Arquivos de Fabricação
 
