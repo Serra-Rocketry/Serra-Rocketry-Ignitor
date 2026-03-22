@@ -53,11 +53,11 @@ Conectada fisicamente ao ignitor do foguete.
 | Buzzer ativo 5V | 2 | BZ1, BZ2 | Piezo | - |
 | Botão Liga/Desliga | 2 | BTN_PWR1, BTN_PWR2 | 12V 20A | - |
 | Botão de Ignição | 1 | BTN_IGN | 22mm, 3-9V (5V), Momentary Reset, Vermelho | - |
-| MOSFET/Relé | 1 | Q1/K1 | Para ignitor (corrente a definir) | - |
+| Relé | 1 | K1 | Para ignitor (corrente a definir) | - |
 | Bateria | 12 | BAT1, BAT2 | A definir (LiPo/18650) | - |
 | Resistores 220Ω | 4 | R1-R4 | Para LEDs | - |
 | Antena LoRa | 2 | ANT1, ANT2 | 433 MHz | - |
-| Módulo TP4056 | 2 | CHG1, CHG2 | Carregador Li-ion/LiPo 1 célula (4,2 V), entrada 5 V, corrente de carga ajustável (até 1 A), proteção recomendada (DW01A+8205A) | [Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/TP4056.pdf) |
+| Módulo TP4056 | 2 | CHG1, CHG2 | Carregador Li-ion/LiPo 1 célula (4,2 V), entrada 5 V, corrente de carga ajustável (até 1 A), proteção recomendada (DW01A+8205A) | - |
 
 ## Pinagem Raspberry Pi Pico
 
@@ -193,6 +193,6 @@ Botão momentâneo (Momentary Reset), **22mm**, vermelho, **3-9V (5V)**. Usado e
 ## Notas Importantes
 
 - **Sempre conectar antena LoRa antes de energizar** (dano ao módulo)
-- Isolar circuito do ignitor via MOSFET/relé
+- Isolar circuito do ignitor via relé
 - Testar sequência completa com carga dummy (lâmpada) antes de uso real
 - Manter distância mínima de 10 m entre operador e foguete
